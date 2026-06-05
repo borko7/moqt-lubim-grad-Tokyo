@@ -4,242 +4,375 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Токио - Моят любим град</title>
+<title>TOKYO | City of the Future</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    color:#333;
+background:#08111f;
+color:white;
+overflow-x:hidden;
 }
 
-header{
-    background:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-}
-
-header h1{
-    font-size:70px;
-    background:rgba(0,0,0,0.6);
-    padding:20px;
-    border-radius:10px;
-}
+/* MENU */
 
 nav{
-    background:#d60000;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+padding:20px;
+z-index:1000;
+text-align:center;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:20px;
-    font-size:20px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+margin:0 20px;
+font-size:18px;
+transition:0.3s;
 }
 
 nav a:hover{
-    color:yellow;
+color:#00f7ff;
 }
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1800&q=80") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-content{
+background:rgba(0,0,0,.5);
+padding:40px;
+border-radius:20px;
+}
+
+.hero h1{
+font-size:90px;
+letter-spacing:5px;
+}
+
+.hero p{
+font-size:25px;
+margin-top:15px;
+}
+
+.hero button{
+margin-top:25px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#00f7ff;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+}
+
+/* SECTIONS */
 
 section{
-    padding:50px;
+padding:100px 10%;
 }
 
-h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#d60000;
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:50px;
+color:#00f7ff;
 }
+
+/* ABOUT */
 
 .about{
-    max-width:1000px;
-    margin:auto;
-    font-size:20px;
-    line-height:1.8;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about p{
+font-size:20px;
+line-height:1.8;
+}
+
+/* CARDS */
+
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .card{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+background:#101d33;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 25px rgba(0,247,255,.2);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
+width:100%;
+height:250px;
+object-fit:cover;
 }
 
 .card h3{
-    padding:15px;
-    color:#d60000;
+padding:20px;
+font-size:28px;
 }
 
 .card p{
-    padding:0 15px 15px;
+padding:0 20px 20px;
 }
 
+.card button{
+margin:20px;
+padding:10px 20px;
+border:none;
+background:#00f7ff;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* GALLERY */
+
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
-    transition:0.5s;
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
 }
 
 .gallery img:hover{
-    transform:scale(1.05);
+transform:scale(1.05);
 }
 
-.info{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    max-width:1000px;
-    margin:auto;
-    line-height:2;
-    font-size:18px;
+/* FACT */
+
+.fact-box{
+text-align:center;
+background:#101d33;
+padding:40px;
+border-radius:20px;
 }
+
+.fact-box button{
+padding:15px 30px;
+border:none;
+background:#00f7ff;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* FOOTER */
 
 footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:30px;
+padding:40px;
+text-align:center;
+background:#050c16;
+font-size:18px;
 }
 </style>
-
 </head>
+
 <body>
 
-<header>
-    <h1>Токио - Моят любим град</h1>
-</header>
-
 <nav>
-    <a href="#about">За Токио</a>
-    <a href="#places">Забележителности</a>
-    <a href="#gallery">Галерия</a>
-    <a href="#facts">Интересни факти</a>
+<a href="#about">За Токио</a>
+<a href="#places">Места</a>
+<a href="#food">Храна</a>
+<a href="#gallery">Галерия</a>
+<a href="#facts">Факти</a>
 </nav>
 
+<div class="hero">
+<div class="hero-content">
+<h1>TOKYO</h1>
+<p>Градът на бъдещето, светлините и безкрайните възможности</p>
+<button onclick="document.getElementById('about').scrollIntoView();">
+Разгледай
+</button>
+</div>
+</div>
+
 <section id="about">
-    <h2>За Токио</h2>
+<h2 class="title">За Токио</h2>
 
-    <div class="about">
-        <p>
-        Токио е столицата на Япония и един от най-впечатляващите градове в света.
-        Градът съчетава модерни технологии, огромни небостъргачи,
-        древни храмове и уникална култура.
-        Населението му е над 14 милиона души, а заедно с околните райони
-        образува най-голямата градска зона на планетата.
-        </p>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80">
 
-        <br>
+<p>
+Токио е столицата на Япония и един от най-впечатляващите градове в света.
+Тук модерните технологии се срещат с древните традиции.
+Ще откриеш небостъргачи, храмове, аниме култура, невероятна храна,
+скоростни влакове и едни от най-красивите гледки на планетата.
+</p>
 
-        <p>
-        Токио е известен със своите светлини, чистота, безопасност,
-        високоскоростни влакове, вкусна храна и невероятни туристически
-        забележителности.
-        </p>
-    </div>
+</div>
 </section>
 
 <section id="places">
-    <h2>Известни забележителности</h2>
 
-    <div class="cards">
+<h2 class="title">Известни места</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1000&q=80">
-            <h3>Tokyo Tower</h3>
-            <p>
-            Една от най-известните кули в Япония с височина 333 метра.
-            Предлага невероятна гледка към града.
-            </p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1000&q=80">
-            <h3>Shibuya Crossing</h3>
-            <p>
-            Най-известното кръстовище в света, през което преминават хиляди хора едновременно.
-            </p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=1200&q=80">
+<h3>Shibuya</h3>
+<p>Най-известното кръстовище в света.</p>
+<button onclick="alert('Shibuya Crossing е едно от най-натоварените кръстовища в света!')">
+Научи повече
+</button>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=80">
-            <h3>Senso-ji Temple</h3>
-            <p>
-            Най-старият будистки храм в Токио и една от най-посещаваните туристически атракции.
-            </p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1200&q=80">
+<h3>Tokyo Tower</h3>
+<p>Емблемата на модерния Токио.</p>
+<button onclick="alert('Кулата е висока 333 метра!')">
+Научи повече
+</button>
+</div>
 
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80">
+<h3>Senso-ji</h3>
+<p>Най-старият храм в Токио.</p>
+<button onclick="alert('Храмът е построен през VII век.')">
+Научи повече
+</button>
+</div>
+
+</div>
+</section>
+
+<section id="food">
+
+<h2 class="title">Японска храна</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=80">
+<h3>Суши</h3>
+<p>Най-известната японска храна.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1614563637806-1d0e645e0940?auto=format&fit=crop&w=1200&q=80">
+<h3>Рамен</h3>
+<p>Популярна супа с нудли.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80">
+<h3>Такояки</h3>
+<p>Любима улична храна в Япония.</p>
+</div>
+
+</div>
+
 </section>
 
 <section id="gallery">
-    <h2>Галерия на Токио</h2>
 
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1505060890522-7f9b9f2d59c0?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1532236204992-f5e85c024202?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1200&q=80">
-    </div>
+<h2 class="title">Галерия</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1532236204992-f5e85c024202?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1505060890522-7f9b9f2d59c0?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
 </section>
 
 <section id="facts">
-    <h2>Интересни факти</h2>
 
-    <div class="info">
-        <ul>
-            <li>🏙️ Токио е един от най-големите градове в света.</li>
-            <li>🚄 Япония е известна със своите високоскоростни влакове Shinkansen.</li>
-            <li>🍣 Сушито е една от най-популярните храни в Токио.</li>
-            <li>🌸 През пролетта градът е известен с красивия цъфтеж на сакурите.</li>
-            <li>🗼 Tokyo Skytree е най-високата кула в Япония.</li>
-            <li>🎮 Районът Акихабара е световно известен с електрониката и аниме културата.</li>
-        </ul>
-    </div>
+<h2 class="title">Интересни факти</h2>
+
+<div class="fact-box">
+
+<h3 id="factText">
+Натисни бутона за случаен факт!
+</h3>
+
+<button onclick="randomFact()">
+Покажи факт
+</button>
+
+</div>
+
 </section>
 
 <footer>
-    <h3>Токио - Градът на бъдещето</h3>
-    <p>Сайт създаден с HTML и CSS</p>
+<h2>TOKYO • JAPAN</h2>
+<p>City of Lights • City of Future • City of Dreams</p>
 </footer>
+
+<script>
+
+const facts=[
+"Токио има над 14 милиона жители.",
+"Tokyo Skytree е висок 634 метра.",
+"В Токио има над 160 000 ресторанта.",
+"Влаковете в Япония са сред най-точните в света.",
+"Shibuya Crossing се пресича от хиляди хора всяка минута.",
+"Токио е един от най-безопасните мегаполиси в света."
+];
+
+function randomFact(){
+let random=Math.floor(Math.random()*facts.length);
+document.getElementById("factText").innerText=facts[random];
+}
+
+</script>
 
 </body>
 </html>
